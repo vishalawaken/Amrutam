@@ -2,8 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const {cartItems} = useContext(ShopContext);
   return (
     <>
       <div className="grid grid-cols-3 items-center bg-[#fff7e5] text-[#3b6a46] px-4 py-2">

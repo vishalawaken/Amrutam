@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const categories = () => {
+const Categories = () => {
   return (
     <div>
       <div className="flex justify-center bg-[#FFF7E2] py-4">
@@ -11,7 +11,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/All_.png"
@@ -28,7 +28,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/Hair.svg"
@@ -45,7 +45,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/skin.png"
@@ -62,7 +62,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/digestion.png"
@@ -79,7 +79,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/joints.png"
@@ -96,7 +96,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/immunity.png"
@@ -113,7 +113,7 @@ const categories = () => {
               to="/"
               className="flex flex-col items-center text-center group transition-opacity"
             >
-              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 group-hover:border-4 group-hover:border-white transition-all duration-300">
+              <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
                     src="../public/categories_icons/arrow.png"
@@ -131,4 +131,4 @@ const categories = () => {
   );
 };
 
-export default categories;
+export default Categories;

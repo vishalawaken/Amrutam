@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Amrutam Kuntal care Hair Spa | Do - it yourself Hair Treatment",
+      "price": 649.00,
+      "quantity": "200ml",
+      "ratings": 5,
+      "image": "../public/product_images/product1.png"
+    },
+    {
+      "id": 2,
+      "productName": "Amrutam Kuntal Care Herbal Shampoo | Healthy, Natural and Dynamic Hair",
+      "price": 649,
+      "quantity": "200ml",
+      "ratings": 5,
+      "image": "../public/product_images/product2.png"
+    },
+    {
+      "id": 3,
+      "productName": "Amrutam Nari Sondarya Malt | Complete care for Women's Health and Beauty",
+      "price": 649,
+      "quantity": "200ml",
+      "ratings": 4,
+      "image": "../public/product_images/product3.png"
+    }
+  ]
+}
