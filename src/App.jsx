@@ -8,6 +8,9 @@ import Home from "./Pages/Home";
 import About_Us from "./Pages/About_Us";
 import Cart from "./Pages/Cart";
 import Footer from "./components/Footer";
+import Product from "./Pages/Product";
+import Categories from "./components/categories";
+import Play_Store from "./components/Play_Store";
 
 const App = () => {
   return (
@@ -15,11 +18,14 @@ const App = () => {
       <Announcement_Bar></Announcement_Bar>
      <Navbar></Navbar>
      <Search_Bar></Search_Bar>
+     <Categories></Categories>
      <Routes>
       <Route path="/" element={<Home></Home>}></Route>
+     <Route path="/product/:productId" element={<Product></Product>}></Route>
       <Route path="/about-us" element={<About_Us></About_Us>}></Route>
       <Route path="/cart" element={<Cart></Cart>}></Route>
      </Routes>
+     <Play_Store></Play_Store>
      <Footer></Footer>
     </div>
   );

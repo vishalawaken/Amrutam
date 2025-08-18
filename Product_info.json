@@ -4,25 +4,91 @@
       "id": 1,
       "productName": "Amrutam Kuntal care Hair Spa | Do - it yourself Hair Treatment",
       "price": 649.00,
+      "how_to_use":"Mix one or two tablespoon of Herbal ChildCare Malt with milk or 100-200 ml warm water and then consume twice a dat or consult our Ayurvedic Expertand find the right Ayurvedic recipe for You",
+      "instructions":"Store in a cool and dry place away from direct sunlight.Not advisable for diabetic patients",
+      "questions":[
+        {
+          "question":"Who Should be using Amrutam Kuntal Care Hair Spa",
+          "answer":"Amrutam Kuntal Care Hair Spa is a 100% Ayurvedic formulation made with powerful herbs like Reetha, Shikakai, Amla, Bhringraj, and Aloe Vera. It helps reduce hair fall, promotes healthy growth, and adds natural volume and shine to your hair. The shampoo also works effectively against dandruff and scalp infections, keeping your scalp clean and nourished. Enriched with ancient Vedic ingredients, it provides gentle yet deep cleansing for long-term hair health. Suitable for all hair types, it can be used regularly for best results. Trusted by 100,000+ customers and approved by Ayurvedic experts."
+        },
+        {
+          "question":"What are the benefits of Amrutam Kuntal Care Hair Spa",
+          "answer":"Amrutam Kuntal Care Hair Spa is a 100% Ayurvedic formulation made with powerful herbs like Reetha, Shikakai, Amla, Bhringraj, and Aloe Vera. It helps reduce hair fall, promotes healthy growth, and adds natural volume and shine to your hair. The shampoo also works effectively against dandruff and scalp infections, keeping your scalp clean and nourished. Enriched with ancient Vedic ingredients, it provides gentle yet deep cleansing for long-term hair health. Suitable for all hair types, it can be used regularly for best results. Trusted by 100,000+ customers and approved by Ayurvedic experts."
+        }
+    
+      ],
       "quantity": "200ml",
       "ratings": 5,
-      "image": "../public/product_images/product1.png"
+      "image": "../public/product_images/product1.png",
+      "description": "Amrutam's Kuntal Care Do-It-Yourself Hair Spa is an ayurvedic marvel filled to the brim with revitalizing herbs and essential oils like Eucalyptus oil, Triphala, Balchhad and Bhringraj. These Ayurvedic ingredients when fused together make a potent dollop that nourishes dry and frizzy hair making it soft and bouncy! This spa treatment revitalizes the roots, promotes growth, provides shine, coats hair with a moisturizing layer and is the best stress reliever! It's time to bring spa home and unwind",
+      "highlights":["Helps with Dry, Fuzzy Hair","Relaxes the Scalp Improves the Health","Make The Hair Smooth and Shiny","Reduces Hairfall repairs damaged Hair"],
+      "ingredients":[
+        {
+          "name": "Shatavari",
+          "image": "../public/Ingredients/image 232.png",
+          "description": "Known for hormonal balance and women's health",
+          "benefits": ["Hormonal support", "Reproductive health"]
+         
+        },
+        {
+          "name": "Gokhru",
+          "image": "../public/Ingredients/image 232.png",
+          "description": "Gokshura is Sita (cold) in potency and Madhura (sweet) in taste. ",
+          "benefits": ["Hormonal support", "Reproductive health"]          
+        },
+        {
+          "name": "Citrak",
+          "image": "../public/Ingredients/image 232.png",
+          "description": "Used for birth control, diarrhea, constipation" ,
+          "benefits": ["Hormonal support", "Reproductive health"]          
+        },
+        {
+          "name": "Shatavari",
+          "image": "../public/Ingredients/image 232.png",
+          "description": "Known for hormonal balance and women's health",
+          "benefits": ["Hormonal support", "Reproductive health"]          
+        }
+      ]
     },
     {
       "id": 2,
       "productName": "Amrutam Kuntal Care Herbal Shampoo | Healthy, Natural and Dynamic Hair",
       "price": 649,
+      "how_to_use":"Mix one or two tablespoon of Herbal ChildCare Malt with milk or 100-200 ml warm water and then consume twice a dat or consult our Ayurvedic Expertand find the right Ayurvedic recipe for You",
+      "instructions":"Store in a cool and dry place away from direct sunlight.Not advisable for diabetic patients",
       "quantity": "200ml",
       "ratings": 5,
-      "image": "../public/product_images/product2.png"
+      "image": "../public/product_images/product2.png",
+      "description":"Amrutam Kuntal Care Herbal Shampoo is a 100% Ayurvedic formulation made with powerful herbs like Reetha, Shikakai, Amla, Bhringraj, and Aloe Vera. It helps reduce hair fall, promotes healthy growth, and adds natural volume and shine to your hair. The shampoo also works effectively against dandruff and scalp infections, keeping your scalp clean and nourished. Enriched with ancient Vedic ingredients, it provides gentle yet deep cleansing for long-term hair health. Suitable for all hair types, it can be used regularly for best results. Trusted by 100,000+ customers and approved by Ayurvedic experts.",
+      "highlights":["Helps with Dry damaged Hair, Fuzzy Hair","Relaxes the Scalp Improves the Health","Make The Hair Smooth and Shiny","Reduces Hairfall repairs damaged Hair"],
+      "ingredients":[
+        {
+          "name": "Shatavari",
+          "image": "../public/Ingredients/image 232.png",
+          "description": "Known for hormonal balance and women's health",
+          "benefits": ["Hormonal support", "Reproductive health"] 
+        }
+      ]
     },
     {
       "id": 3,
       "productName": "Amrutam Nari Sondarya Malt | Complete care for Women's Health and Beauty",
       "price": 649,
+      "how_to_use":"Mix one or two tablespoon of Herbal ChildCare Malt with milk or 100-200 ml warm water and then consume twice a dat or consult our Ayurvedic Expertand find the right Ayurvedic recipe for You",
+      "instructions":"Store in a cool and dry place away from direct sunlight.Not advisable for diabetic patients",
       "quantity": "200ml",
       "ratings": 4,
-      "image": "../public/product_images/product3.png"
+      "image": "../public/product_images/product3.png",
+      "description":"Amrutam Nari Sondarya is a premium Ayurvedic medicine crafted with over 20 potent herbs including Ashoka, Lodhra, and Shatavari, specially formulated to support women’s overall health and wellness. It helps balance hormones, improve vitality, and enhance natural beauty from within. Regular consumption aids in maintaining menstrual health, strengthening the body, and promoting long-lasting energy. This malt is made with authentic Ayurvedic ingredients, delivered in a reusable glass jar for purity and sustainability. Simply mix a spoonful in warm milk or water and consume twice daily for best results. Trusted by thousands of women, it’s a holistic solution for complete well-being.",
+      "highlights":["Helps with Dry damaged Hair, Fuzzy Hair","Relaxes the Scalp Improves the Health","Make The Hair Smooth and Shiny","Reduces Hairfall repairs damaged Hair"],
+      "ingredients":[
+        {
+          "name": "Shatavari",
+          "image": "../public/Ingredients/image 232.png",
+          "description": "Known for hormonal balance and women's health",
+          "benefits": ["Hormonal support", "Reproductive health"]
+        }
+      ]
     }
   ]
-}
+} 

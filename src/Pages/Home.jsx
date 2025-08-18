@@ -9,9 +9,9 @@ import Play_Store from '../components/Play_Store'
 const Home = () => {
   return (
     <div>
-        <Categories></Categories>
+        
         <Product_Carousal></Product_Carousal>
-        <Play_Store></Play_Store>
+        
     </div>
   )
 }

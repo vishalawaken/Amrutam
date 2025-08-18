@@ -2,18 +2,25 @@ import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { ShopContext } from "../context/ShopContext";
+import { useNavigate } from "react-router-dom";
 
 const Product_Card = ({ product }) => {
   const {addToCart} = useContext(ShopContext);
+  const navigate = useNavigate();
 
-  const handleAddToCart = () => {
+  const handleProductClick=()=>{
+    navigate(`/product/${product.id}`)
+  }
+
+  const handleAddToCart = (event) => {
+    event.stopPropagation();
     addToCart(product.id);
     // Optional: Add some feedback like toast notification
     console.log(`Added ${product.productName} to cart!`);
   };
 
   return (
-    <div className="bg-[#FDF8E8] rounded-lg p-4  transition-shadow duration-300 relative max-w-sm">
+    <div onClick={handleProductClick} className="bg-[#FDF8E8] cursor-pointer rounded-lg p-4  transition-shadow duration-300 relative max-w-sm">
       {/* Product Image */}
       <div className="relative mb-4">
         <img
