@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import productsData from "../../Product_info.json";
+import Related_Products from "../components/Related_Products";
 
 const Product = () => {
   const { productId } = useParams();
@@ -215,15 +216,149 @@ const Product = () => {
           {/* How To Use */}
           <div className="mt-8">
             <h1 className="text-lg font-bold mb-4">How To Use</h1>
-            <p className="bg-[#FDEAD2] px-2 py-3 rounded-lg text-[15px]">{product.how_to_use}</p>
+            <p className="bg-[#FDEAD2] px-2 py-3 rounded-lg text-[15px]">
+              {product.how_to_use}
+            </p>
           </div>
 
           {/* General Instructions */}
           <div className="mt-8">
             <h1 className="text-lg font-bold mb-4">General Instructions</h1>
-            <p className="bg-[#FDEAD2] px-2 py-3 rounded-lg text-[15px]">{product.instructions}</p>
+            <p className="bg-[#FDEAD2] px-2 py-3 rounded-lg text-[15px]">
+              {product.instructions}
+            </p>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mt-8">
+            <h1 className="text-lg font-bold mb-4">Commonly asked Questions</h1>
+            <div className="space-y-3">
+              {product.questions?.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-[#FDEAD2] rounded-lg overflow-hidden"
+                >
+                  <div className="px-4 py-3 border-b border-orange-200">
+                    <h3 className="text-[15px] font-semibold text-gray-800">
+                      Q{index + 1}: {faq.question}
+                    </h3>
+                  </div>
+                  <div className="px-4 py-3">
+                    <p className="text-[14px] text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Video Section */}
+          <div className="mt-4">
+            <h1 className="my-3">Trust The Voice</h1>
+            <div className="w-full max-w-3xl aspect-video rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/88684rNzsdg"
+                title="I tried this product 5 days and this happened | AMRUTAM FACE CLEANUP | ShivShakti Sachdev"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* 2ND BLOCK */}
+      <div className="w-full 2nd_block bg-[#FFF7E2] py-16 px-20">
+        {/* Reviews and Ratings Section */}
+        <div className="max-w-7xl mx-auto">
+          {/* Section Title */}
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-12">
+            Reviews and Ratings
+          </h1>
+
+          {/* Rating Summary and Buttons */}
+          <div className="flex justify-between items-center mb-8">
+            {/* Rating Box */}
+            <div className="bg-[#FDEAD2] rounded-lg p-6 flex-shrink-0">
+              <div className="flex items-end gap-2 mb-2">
+                <h2 className="text-4xl font-bold text-gray-800">
+                  {product.ratings}.0
+                </h2>
+                <div className="flex mb-1">
+                  {Array.from({ length: product.ratings }).map((_, index) => (
+                    <span key={index} className="text-yellow-400 text-xl">
+                      ★
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Based on {product.reviews.length} reviews
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex gap-4">
+              <button className="px-6 py-3 border-2 text-green-700 border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                See More Reviews
+              </button>
+              <button className="px-6 py-3 border-2 border-gray-300 text-green-700 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                Write a review
+              </button>
+            </div>
+          </div>
+
+          {/* Individual Reviews */}
+          <div className="space-y-6">
+            {product.reviews.map((review, index) => (
+              <div key={index} className="bg-[#FDEAD2] rounded-lg p-6">
+                <div className="flex items-start gap-4">
+                  {/* User Avatar */}
+                  <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-gray-600 font-semibold text-lg">
+                      {review.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                        .toUpperCase()}
+                    </span>
+                  </div>
+
+                  {/* Review Content */}
+                  <div className="flex-1">
+                    <p className="text-gray-800 text-base leading-relaxed mb-3">
+                      {review.comment}
+                    </p>
+
+                    {/* Review Details */}
+                    <div className="flex items-center gap-4 text-sm text-gray-600">
+                      <span className="font-medium">{review.name}</span>
+                      <span>•</span>
+                      <span>20 January 2023</span>
+                      <span>•</span>
+                      <div className="flex">
+                        {Array.from({ length: review.rating }).map(
+                          (_, starIndex) => (
+                            <span key={starIndex} className="text-yellow-400">
+                              ★
+                            </span>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Related Products */}
+        <Related_Products></Related_Products>
       </div>
     </div>
   );
