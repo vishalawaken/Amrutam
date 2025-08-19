@@ -1,0 +1,39 @@
+{
+    "experts":[
+        {
+            "name":"Dr.Baidehi Bajpai",
+            "profile":"Ayurveda Practitioner (BAMS,MD)",
+            "experience":"25+ years of experience",
+            "speciality":"skin-specialist",
+            "image":"/user_dp/user_female.jpg",
+            "description":"Dr. John Doe is a renowned Ayurvedic expert with over 20 years of experience in Ayurvedic medicine."
+        },
+        
+        {
+            "name":"Dr.Vaishali Sharma",
+            "profile":"Ayurveda Practitioner (BAMS,MD)",
+            "experience":"15+ years of experience",
+            "speciality":"hair-specialist",
+            "image":"/user_dp/user_female.jpg",
+            "description":"Dr. John Doe is a renowned Ayurvedic expert with over 20 years of experience in Ayurvedic medicine."
+        },
+        
+        {
+            "name":"Dr. John Doe",
+            "profile":"Ayurveda Practitioner (BAMS,MD)",
+            "experience":"35+ years of experience",
+            "speciality":"weight-loss-specialist",
+            "image":"/user_dp/user_female.jpg",
+            "description":"Dr. John Doe is a renowned Ayurvedic expert with over 20 years of experience in Ayurvedic medicine."
+        },
+        {
+            "name":"Dr. Priya Patel",
+            "profile":"Ayurveda Practitioner (BAMS,MD)",
+            "experience":"20+ years of experience",
+            "speciality":"Ayurveda",
+            "image":"/user_dp/user_female.jpg",
+            "description":"Dr. Priya Patel is a renowned Ayurvedic expert with over 20 years of experience in Ayurvedic medicine."
+        }
+        
+    ]
+}

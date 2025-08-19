@@ -5,6 +5,7 @@
       "productName": "Amrutam Kuntal care Hair Spa | Do - it yourself Hair Treatment",
       "price": 649.00,
       "how_to_use":"Mix one or two tablespoon of Herbal ChildCare Malt with milk or 100-200 ml warm water and then consume twice a dat or consult our Ayurvedic Expertand find the right Ayurvedic recipe for You",
+      "tags": ["ayurvedic", "hair-care", "organic", "herbal"],
       "instructions":"Store in a cool and dry place away from direct sunlight.Not advisable for diabetic patients",
       "reviews":[
         {
@@ -67,6 +68,7 @@
       "productName": "Amrutam Kuntal Care Herbal Shampoo | Healthy, Natural and Dynamic Hair",
       "price": 649,
       "how_to_use":"Mix one or two tablespoon of Herbal ChildCare Malt with milk or 100-200 ml warm water and then consume twice a dat or consult our Ayurvedic Expertand find the right Ayurvedic recipe for You",
+      "tags": ["ayurvedic", "hair-care", "organic", "herbal"],
       "instructions":"Store in a cool and dry place away from direct sunlight.Not advisable for diabetic patients",
       "quantity": "200ml",
       "reviews":[
@@ -110,6 +112,7 @@
       "productName": "Amrutam Nari Sondarya Malt | Complete care for Women's Health and Beauty",
       "price": 649,
       "how_to_use":"Mix one or two tablespoon of Herbal ChildCare Malt with milk or 100-200 ml warm water and then consume twice a dat or consult our Ayurvedic Expertand find the right Ayurvedic recipe for You",
+      "tags": ["ayurvedic", "hair-care", "organic", "herbal"],
       "instructions":"Store in a cool and dry place away from direct sunlight.Not advisable for diabetic patients",
       "quantity": "200ml",
       "ratings": 4,

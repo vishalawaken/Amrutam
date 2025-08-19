@@ -1,9 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import productsData from "../../Product_info.json";
 import Related_Products from "../components/Related_Products";
+import { useContext } from "react";
+import { ShopContext } from "../context/ShopContext";
 
 const Product = () => {
+  const { experts } = useContext(ShopContext);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Responsive experts per slide
+  const getExpertsPerSlide = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth < 768) return 1; // Mobile: 1 expert
+      if (window.innerWidth < 1024) return 2; // Tablet: 2 experts
+      return 3; // Desktop: 3 experts
+    }
+    return 3; // Default fallback
+  };
+
+  const [expertsPerSlide, setExpertsPerSlide] = useState(getExpertsPerSlide());
+  const totalSlides = Math.ceil(experts.length / expertsPerSlide);
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const newExpertsPerSlide = getExpertsPerSlide();
+      setExpertsPerSlide(newExpertsPerSlide);
+      // Reset to first slide when screen size changes
+      setCurrentSlide(0);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { productId } = useParams();
   const product = productsData.products.find(
     (item) => item.id === parseInt(productId)
@@ -12,6 +44,20 @@ const Product = () => {
   console.log("URL ID:", productId);
   const [quantity, setQuantity] = useState(0);
   const [selectedImage, setSelectedImage] = useState(product.image);
+
+  // Update selectedImage when product changes
+  useEffect(() => {
+    if (product?.image) {
+      setSelectedImage(product.image);
+    }
+  }, [product]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
   return (
     <div classname="w-full">
       <div className="1st-block flex w-full px-20 py-8 gap-12 max-w-7xl mx-auto bg-[#FFF7E2]">
@@ -358,7 +404,181 @@ const Product = () => {
         </div>
 
         {/* Related Products */}
-        <Related_Products></Related_Products>
+        <Related_Products
+          currentProduct={product}
+          allProducts={productsData.products}
+        />
+
+        {/* Meet Our Experts Section */}
+        <div className="w-full bg-white py-8 md:py-16 px-4 md:px-20">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Title */}
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+              Meet our Experts
+            </h2>
+
+            {/* Experts Carousel */}
+            <div className="relative">
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 18L9 12L15 6"
+                    stroke="#666"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 18L15 12L9 6"
+                    stroke="#666"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              {/* Expert Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 px-4 md:px-8">
+                {(() => {
+                  const startIndex = currentSlide * expertsPerSlide;
+                  const currentExperts = experts.slice(
+                    startIndex,
+                    startIndex + expertsPerSlide
+                  );
+                  return currentExperts.map((expert, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#FFF7E2] rounded-3xl p-4 md:p-8 text-center relative"
+                    >
+                      {/* Expert Image */}
+                      <div className="relative mb-6">
+                        <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gray-200">
+                          <img
+                            src={expert.image}
+                            alt={expert.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+
+                        {/* Rating Badge */}
+                        <div className="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-2 bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                          <span>4.5</span>
+                          <svg
+                            width="12"
+                            height="12"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                          </svg>
+                        </div>
+                      </div>
+
+                      {/* Expert Info */}
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        {expert.name}
+                      </h3>
+
+                      <p className="text-gray-600 mb-3">{expert.profile}</p>
+
+                      {/* Experience */}
+                      <div className="flex items-center justify-center gap-2 mb-3 text-gray-700">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M20 6L9 17L4 12"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        <span className="text-sm">{expert.experience}</span>
+                      </div>
+
+                      {/* Speciality */}
+                      <div className="flex items-center justify-center gap-2 mb-6 text-gray-700">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        <span className="text-sm capitalize">
+                          {expert.speciality.replace("-", " ")}
+                        </span>
+                      </div>
+
+                      {/* Book Session Button */}
+                      <button className="w-full bg-[#3A643B] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#2d4f2f] transition-colors">
+                        Book a session
+                      </button>
+                    </div>
+                  ));
+                })()}
+              </div>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: totalSlides }).map((_, index) => (
+                <div
+                  key={index}
+                  className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
+                    index === currentSlide ? "bg-[#3A643B]" : "bg-gray-300"
+                  }`}
+                  onClick={() => setCurrentSlide(index)}
+                />
+              ))}
+            </div>
+
+            {/* Find More Experts Button */}
+            <div className="text-center mt-8">
+              <button className="border-2 border-[#3A643B] text-[#3A643B] px-8 py-3 rounded-lg font-medium hover:bg-[#3A643B] hover:text-white transition-colors flex items-center gap-2 mx-auto">
+                Find more experts
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
