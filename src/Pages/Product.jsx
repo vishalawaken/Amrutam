@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import productsData from "../../Product_info.json";
 import Related_Products from "../components/Related_Products";
 import { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 
 const Product = () => {
-  const { experts } = useContext(ShopContext);
+  const { experts, cartItems, addToCart, removeFromCart, updateCartQuantity } =
+    useContext(ShopContext);
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -42,7 +43,10 @@ const Product = () => {
   );
   console.log("Found product:", product);
   console.log("URL ID:", productId);
-  const [quantity, setQuantity] = useState(0);
+
+  // Get cart quantity for this product, default to 1 if not in cart
+  const cartItem = cartItems[productId];
+  const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 1);
   const [selectedImage, setSelectedImage] = useState(product.image);
 
   // Update selectedImage when product changes
@@ -52,11 +56,53 @@ const Product = () => {
     }
   }, [product]);
 
+  // Sync quantity with cart when cart changes
+  useEffect(() => {
+    const cartItem = cartItems[productId];
+    if (cartItem) {
+      setQuantity(cartItem.quantity);
+    } else {
+      setQuantity(1);
+    }
+  }, [cartItems, productId]);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
   };
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  // Cart action handlers
+  const handleQuantityDecrease = () => {
+    const newQuantity = Math.max(1, quantity - 1);
+    setQuantity(newQuantity);
+    if (cartItems[productId]) {
+      updateCartQuantity(productId, newQuantity);
+    }
+  };
+
+  const handleQuantityIncrease = () => {
+    const newQuantity = quantity + 1;
+    setQuantity(newQuantity);
+    if (cartItems[productId]) {
+      updateCartQuantity(productId, newQuantity);
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (cartItems[productId]) {
+      // Update quantity if already in cart
+      updateCartQuantity(productId, quantity);
+    } else {
+      // Add new item to cart
+      addToCart(productId, product, quantity);
+    }
+  };
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(productId);
+    setQuantity(1); // Reset quantity to 1 when removed
   };
   return (
     <div classname="w-full">
@@ -132,6 +178,15 @@ const Product = () => {
             <span className="text-3xl font-bold text-gray-800">
               ₹ {product.price}
             </span>
+            {/* Cart Status Indicator */}
+            {cartItems[productId] && (
+              <div className="mt-2 flex items-center gap-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="text-green-600 font-medium text-sm">
+                  In Cart ({cartItems[productId].quantity} items)
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Quantity Options */}
@@ -147,8 +202,9 @@ const Product = () => {
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center border-2 border-gray-300 rounded-lg">
               <button
-                onClick={() => setQuantity(Math.max(0, quantity - 1))}
-                className="px-4 py-3 text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors"
+                onClick={handleQuantityDecrease}
+                className="px-4 py-3 text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={quantity <= 1}
               >
                 −
               </button>
@@ -156,15 +212,28 @@ const Product = () => {
                 {quantity}
               </span>
               <button
-                onClick={() => setQuantity(quantity + 1)}
+                onClick={handleQuantityIncrease}
                 className="px-4 py-3 text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors"
               >
                 +
               </button>
             </div>
-            <button className="flex-1 bg-green-600 text-white py-3 px-8 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-              Add to cart
+            <button
+              onClick={handleAddToCart}
+              className="flex-1 bg-green-600 text-white py-3 px-8 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+            >
+              {cartItems[productId] ? "Update Cart" : "Add to Cart"}
             </button>
+
+            {/* Remove from Cart button - only show if item is in cart */}
+            {cartItems[productId] && (
+              <button
+                onClick={handleRemoveFromCart}
+                className="bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+              >
+                Remove
+              </button>
+            )}
           </div>
 
           {/* Description */}
@@ -213,48 +282,47 @@ const Product = () => {
             {/* 2x2 Grid of ingredients */}
             <div className="grid grid-cols-2 gap-4">
               {product.ingredients.map((ingredient, index) => (
-                <div
-                  key={index}
-                  className="bg-[#FDEAD2] rounded-lg px-2 py-4 flex items-center gap-5 hover:shadow-md transition-shadow cursor-pointer group border border-orange-100"
-                >
-                  {/* Ingredient Image */}
-                  <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-white shadow-sm">
-                    <img
-                      src={ingredient.image}
-                      alt={ingredient.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Ingredient Info */}
-                  <div className="flex-1">
-                    <h3 className="text-base font-semibold text-gray-800">
-                      {ingredient.name}
-                    </h3>
-                    <p className="text-gray-600 text-[10px] leading-snug">
-                      {ingredient.description}
-                    </p>
-                  </div>
-
-                  {/* Arrow Icon */}
-                  <div className="text-gray-400 group-hover:text-gray-600 transition-colors">
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M9 18L15 12L9 6"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                <Link to={`/ingredient/${ingredient.name}`} key={index}>
+                  <div className="bg-[#FDEAD2] rounded-lg px-2 py-4 flex items-center gap-5 hover:shadow-md transition-shadow cursor-pointer group border border-orange-100">
+                    {/* Ingredient Image */}
+                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-white shadow-sm">
+                      <img
+                        src={ingredient.image}
+                        alt={ingredient.name}
+                        className="w-full h-full object-cover"
                       />
-                    </svg>
+                    </div>
+
+                    {/* Ingredient Info */}
+                    <div className="flex-1">
+                      <h3 className="text-base font-semibold text-gray-800">
+                        {ingredient.name}
+                      </h3>
+                      <p className="text-gray-600 text-[10px] leading-snug">
+                        {ingredient.description}
+                      </p>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <div className="text-gray-400 group-hover:text-gray-600 transition-colors">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

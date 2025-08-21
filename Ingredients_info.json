@@ -1,0 +1,230 @@
+{
+    "ingredients": [
+      {
+        "name": "Shatavari",
+        "description": "Shatavari (Asparagus racemosus) is a rejuvenating herb widely used in Ayurveda, particularly for women’s health.",
+        "image":"/public/Ingredients/shatavari.jpg",
+        "benefits": [
+          "Balances female hormones",
+          "Supports reproductive health",
+          "Improves digestion and immunity"
+        ],
+        "ayurvedic_properties": {
+          "rasa": "Katu (Pungent) - Stimulates salivation and digestion",
+          "virya": "Ushna (Hot) - Increases heat and energy in the body",
+          "guna": "Laghu (Light) - Easy to digest, reduces heaviness",
+          "vipaka": "Katu (Pungent) - Drying and stimulating even after digestion"
+        },
+        "important_formulations": [
+          "Chitrak Haritaki",
+          "Chitrakadi Vati",
+          "Kalyanagulam",
+          "Chitrakadi Churna"
+        ],
+        "therapeutic_uses": [
+          "Agnimandya",
+          "Graham Rog",
+          "Arsha",
+          "Udara Shula",
+          "Gulastha"
+        ],
+        "plant_parts": {
+          "Root": "Digestion, Skin conditions, manage blood sugar level.",
+          "Root bark": "Manage obesity, metabolism and aids in weight loss.",
+          "Leaves": "Used externally for skin conditions and wounds."
+        },
+        "best_combined_with": [
+          "Ashwagandha",
+          "Licorice",
+          "Aloe Vera"
+        ],
+        "geographical_locations": [
+          "India (tropical regions)",
+          "Sri Lanka",
+          "Nepal"
+        ],
+        "why_to_use": "Shatavari is the go-to herb for balancing female hormones, enhancing fertility, and supporting overall vitality, especially for women."
+      },
+      {
+        "name": "Gokhru",
+        "description": "Gokhru (Tribulus terrestris) is an important herb for kidney health and male vitality.",
+        "image":"/public/Ingredients/gokhru.jpg",
+        "benefits": [
+          "Enhances stamina and energy",
+          "Supports kidney and urinary tract health",
+          "Improves muscle strength"
+        ],
+        "ayurvedic_properties": {
+          "rasa": "Katu (Pungent) - Stimulates salivation and digestion",
+          "virya": "Ushna (Hot) - Increases heat and energy in the body",
+          "guna": "Laghu (Light) - Easy to digest, reduces heaviness",
+          "vipaka": "Katu (Pungent) - Drying and stimulating even after digestion"
+        },
+        "important_formulations": [
+          "Chitrak Haritaki",
+          "Chitrakadi Vati",
+          "Kalyanagulam",
+          "Chitrakadi Churna"
+        ],
+        "therapeutic_uses": [
+          "Agnimandya",
+          "Graham Rog",
+          "Arsha",
+          "Udara Shula",
+          "Gulastha"
+        ],
+        "plant_parts": {
+          "Root": "Digestion, Skin conditions, manage blood sugar level.",
+          "Root bark": "Manage obesity, metabolism and aids in weight loss.",
+          "Leaves": "Used externally for skin conditions and wounds."
+        },
+        "best_combined_with": [
+          "Punarnava",
+          "Shilajit",
+          "Ashwagandha"
+        ],
+        "geographical_locations": [
+          "India (dry regions)",
+          "Pakistan",
+          "Mediterranean countries"
+        ],
+        "why_to_use": "Gokhru is ideal for improving kidney health, urinary tract function, and enhancing male reproductive strength and stamina."
+      },
+      {
+        "name": "Shikakai",
+        "description": "Shikakai (Acacia concinna) is a natural cleanser and hair care herb traditionally used as herbal shampoo.",
+        "image":"/public/Ingredients/shikhakai.jpg",
+        "benefits": [
+          "Promotes hair growth",
+          "Strengthens scalp",
+          "Reduces dandruff"
+        ],
+        "ayurvedic_properties": {
+          "rasa": "Katu (Pungent) - Stimulates salivation and digestion",
+          "virya": "Ushna (Hot) - Increases heat and energy in the body",
+          "guna": "Laghu (Light) - Easy to digest, reduces heaviness",
+          "vipaka": "Katu (Pungent) - Drying and stimulating even after digestion"
+        },
+        "important_formulations": [
+          "Chitrak Haritaki",
+          "Chitrakadi Vati",
+          "Kalyanagulam",
+          "Chitrakadi Churna"
+        ],
+        "therapeutic_uses": [
+          "Agnimandya",
+          "Graham Rog",
+          "Arsha",
+          "Udara Shula",
+          "Gulastha"
+        ],
+        "plant_parts": {
+          "Root": "Digestion, Skin conditions, manage blood sugar level.",
+          "Root bark": "Manage obesity, metabolism and aids in weight loss.",
+          "Leaves": "Used externally for skin conditions and wounds."
+        },
+        "best_combined_with": [
+          "Ritha",
+          "Amla",
+          "Neem"
+        ],
+        "geographical_locations": [
+          "Central and South India",
+          "Tropical forests of Asia"
+        ],
+        "why_to_use": "Shikakai is a natural alternative to chemical shampoos, promoting strong, shiny, and dandruff-free hair."
+      },
+      {
+        "name": "Ritha",
+        "description": "Ritha (Sapindus mukorossi), also known as Soapnut, is rich in natural saponins and used as a cleanser.",
+        "image":"/public/Ingredients/ritha.jpg",
+        "benefits": [
+          "Natural hair and skin cleanser",
+          "Antimicrobial and antifungal",
+          "Eco-friendly detergent alternative"
+        ],
+        "ayurvedic_properties": {
+          "rasa": "Katu (Pungent) - Stimulates salivation and digestion",
+          "virya": "Ushna (Hot) - Increases heat and energy in the body",
+          "guna": "Laghu (Light) - Easy to digest, reduces heaviness",
+          "vipaka": "Katu (Pungent) - Drying and stimulating even after digestion"
+        },
+        "important_formulations": [
+          "Chitrak Haritaki",
+          "Chitrakadi Vati",
+          "Kalyanagulam",
+          "Chitrakadi Churna"
+        ],
+        "therapeutic_uses": [
+          "Agnimandya",
+          "Graham Rog",
+          "Arsha",
+          "Udara Shula",
+          "Gulastha"
+        ],
+        "plant_parts": {
+          "Root": "Digestion, Skin conditions, manage blood sugar level.",
+          "Root bark": "Manage obesity, metabolism and aids in weight loss.",
+          "Leaves": "Used externally for skin conditions and wounds."
+        },
+        "best_combined_with": [
+          "Shikakai",
+          "Amla",
+          "Neem"
+        ],
+        "geographical_locations": [
+          "Himalayan foothills",
+          "North India",
+          "Nepal"
+        ],
+        "why_to_use": "Ritha is a sustainable and natural choice for cleansing hair, skin, and even clothes without harmful chemicals."
+      },
+      {
+        "name": "Citrak",
+        "description": "Citrak (Plumbago zeylanica) is a powerful digestive and carminative herb used in Ayurveda to kindle Agni (digestive fire).",
+        "image":"/public/Ingredients/citrak.jpg",
+        "benefits": [
+          "Improves digestion",
+          "Reduces ama (toxins)",
+          "Supports weight management",
+          "Relieves bloating and indigestion"
+        ],
+        "ayurvedic_properties": {
+          "rasa": "Katu (Pungent) - Stimulates salivation and digestion",
+          "virya": "Ushna (Hot) - Increases heat and energy in the body",
+          "guna": "Laghu (Light) - Easy to digest, reduces heaviness",
+          "vipaka": "Katu (Pungent) - Drying and stimulating even after digestion"
+        },
+        "important_formulations": [
+          "Chitrak Haritaki",
+          "Chitrakadi Vati",
+          "Kalyanagulam",
+          "Chitrakadi Churna"
+        ],
+        "therapeutic_uses": [
+          "Agnimandya",
+          "Graham Rog",
+          "Arsha",
+          "Udara Shula",
+          "Gulastha"
+        ],
+        "plant_parts": {
+          "Root": "Digestion, Skin conditions, manage blood sugar level.",
+          "Root bark": "Manage obesity, metabolism and aids in weight loss.",
+          "Leaves": "Used externally for skin conditions and wounds."
+        },
+        "best_combined_with": [
+          "Trikatu",
+          "Pippali",
+          "Haritaki"
+        ],
+        "geographical_locations": [
+          "India (plains and forests)",
+          "Sri Lanka",
+          "Southeast Asia"
+        ],
+        "why_to_use": "Citrak is best used for improving sluggish digestion, reducing toxins, and managing metabolic and inflammatory disorders."
+      }
+    ]
+  }
+  

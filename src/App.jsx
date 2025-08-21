@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Product from "./Pages/Product";
 import Categories from "./components/categories";
 import Play_Store from "./components/Play_Store";
+import Ingredients from "./Pages/Ingredients";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
      <Route path="/product/:productId" element={<Product></Product>}></Route>
       <Route path="/about-us" element={<About_Us></About_Us>}></Route>
       <Route path="/cart" element={<Cart></Cart>}></Route>
+      <Route path="/ingredient/:ingredientName" element={<Ingredients></Ingredients>}></Route>
      </Routes>
      <Play_Store></Play_Store>
      <Footer></Footer>

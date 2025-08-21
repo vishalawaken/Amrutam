@@ -6,7 +6,7 @@ import { ShopContext } from "../context/ShopContext";
 import { useContext } from "react";
 
 const Navbar = () => {
-  const {cartItems} = useContext(ShopContext);
+  const { getCartCount } = useContext(ShopContext);
   return (
     <>
       <div className="grid grid-cols-3 items-center bg-[#fff7e5] text-[#3b6a46] px-4 py-2">
@@ -67,7 +67,7 @@ const Navbar = () => {
               alt="wallet"
               className="w-6 h-6"
             />
-            <span className="absolute px-3 -top-1 -right-1 bg-green-600 bg-[#3a643c] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            <span className="absolute px-3 -top-1 -right-1 bg-[#3a643c] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
               $20
             </span>
           </div>
@@ -77,9 +77,11 @@ const Navbar = () => {
               alt="cart"
               className="w-6 h-6"
             />
-            <span className="absolute -top-1 -right-1 bg-green-600 bg-[#3a643c] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-              2
-            </span>
+            {getCartCount() > 0 && (
+              <span className="absolute -top-1 -right-1 bg-[#3a643c] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {getCartCount()}
+              </span>
+            )}
           </div>
           <div className="notification_bell p-2 hover:bg-gray-100 bg-[#d2d9d2] rounded-full transition-colors cursor-pointer">
             <img
