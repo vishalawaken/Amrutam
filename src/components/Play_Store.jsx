@@ -2,7 +2,7 @@ import React from "react";
 
 const Play_Store = () => {
   return (
-    <div className="w-full flex bg-[#FFF7E2] px-15 pt-20 pb-20">
+    <div className="w-full flex bg-[#FFF7E2] px-15 pt-20 pb-20 hidden md:flex">
       <div className="left_section w-[50%]">
         <h1 className="text-[#3B6A46] text-3xl mb-6">
           Download Amrutam Ayurveda App Now
@@ -23,9 +23,12 @@ const Play_Store = () => {
           </div>
 
           <div className="row-3 flex gap-3 mt-10">
-            <a href=""><img src="../public/Play_store_images/playstore.png" alt="" /></a>
-            <a href=""><img src="../public/Play_store_images/appstore.png" alt="" /></a>
-            
+            <a href="">
+              <img src="../public/Play_store_images/playstore.png" alt="" />
+            </a>
+            <a href="">
+              <img src="../public/Play_store_images/appstore.png" alt="" />
+            </a>
           </div>
         </div>
       </div>

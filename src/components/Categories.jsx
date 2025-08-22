@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
-    <div>
+    <div className="hidden md:block">
       <div className="flex justify-center bg-[#FFF7E2] py-4">
         <ul className="flex gap-20 items-end">
           <li className="flex flex-col items-center">
