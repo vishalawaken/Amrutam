@@ -105,24 +105,24 @@ const Product = () => {
     setQuantity(1); // Reset quantity to 1 when removed
   };
   return (
-    <div classname="w-full">
-      <div className="1st-block flex w-full px-20 py-8 gap-12 max-w-7xl mx-auto bg-[#FFF7E2]">
+    <div className="w-full">
+      <div className="1st-block flex flex-col md:flex-row w-full px-4 md:px-20 py-4 md:py-8 gap-6 md:gap-12 max-w-7xl mx-auto bg-[#FFF7E2]">
         {/* Product Image */}
-        <div className="Product_Image w-[50%]">
+        <div className="Product_Image w-full md:w-[50%]">
           <div className="Main_Image mb-4">
             <img
               src={selectedImage}
               alt={product.productName}
-              className="w-full h-[500px] object-cover rounded-lg shadow-md"
+              className="w-full h-[300px] md:h-[500px] object-cover rounded-lg shadow-md"
             />
           </div>
-          <div className="sub_images flex gap-3 justify-between">
+          <div className="sub_images flex gap-2 md:gap-3 justify-center md:justify-between">
             <div
               onClick={(event) => setSelectedImage(event.target.src)}
               className="sub_image cursor-pointer border-2 border-gray-200 rounded-lg overflow-hidden hover:border-green-500 transition-colors"
             >
               <img
-                className="h-40 w-40 object-cover"
+                className="h-20 w-20 md:h-40 md:w-40 object-cover"
                 src={product.image}
                 alt=""
               />
@@ -132,7 +132,7 @@ const Product = () => {
               className="sub_image cursor-pointer border-2 border-gray-200 rounded-lg overflow-hidden hover:border-green-500 transition-colors"
             >
               <img
-                className="h-40 w-40 object-cover"
+                className="h-20 w-20 md:h-40 md:w-40 object-cover"
                 src={product.image}
                 alt=""
               />
@@ -142,7 +142,7 @@ const Product = () => {
               className="sub_image cursor-pointer border-2 border-gray-200 rounded-lg overflow-hidden hover:border-green-500 transition-colors"
             >
               <img
-                className="h-40 w-40 object-cover"
+                className="h-20 w-20 md:h-40 md:w-40 object-cover"
                 src={product.image}
                 alt=""
               />
@@ -151,13 +151,13 @@ const Product = () => {
         </div>
 
         {/* Product Info */}
-        <div className="Product_Info w-[50%] pl-8">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+        <div className="Product_Info w-full md:w-[50%] md:pl-8">
+          <h1 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4 leading-tight">
             {product.productName}
           </h1>
 
           {/* Rating */}
-          <div className="flex items-center mb-4">
+          <div className="flex items-center mb-3 md:mb-4">
             <div className="flex text-yellow-400 mr-2">
               {[...Array(5)].map((_, i) => (
                 <span
@@ -170,19 +170,21 @@ const Product = () => {
                 </span>
               ))}
             </div>
-            <span className="text-gray-600 text-sm">(204 reviews)</span>
+            <span className="text-gray-600 text-xs md:text-sm">
+              (204 reviews)
+            </span>
           </div>
 
           {/* Price */}
-          <div className="mb-6">
-            <span className="text-3xl font-bold text-gray-800">
+          <div className="mb-4 md:mb-6">
+            <span className="text-2xl md:text-3xl font-bold text-gray-800">
               ₹ {product.price}
             </span>
             {/* Cart Status Indicator */}
             {cartItems[productId] && (
               <div className="mt-2 flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-green-600 font-medium text-sm">
+                <span className="text-green-600 font-medium text-xs md:text-sm">
                   In Cart ({cartItems[productId].quantity} items)
                 </span>
               </div>
@@ -190,37 +192,37 @@ const Product = () => {
           </div>
 
           {/* Quantity Options */}
-          <div className="mb-6">
+          <div className="mb-4 md:mb-6">
             <div className="flex gap-3">
-              <button className="px-4 py-2 border-2 border-gray-300 text-gray-600 rounded-md font-medium hover:bg-gray-50 transition-colors">
+              <button className="px-3 md:px-4 py-2 border-2 border-gray-300 text-gray-600 rounded-md font-medium hover:bg-gray-50 transition-colors text-sm md:text-base">
                 {product.quantity}
               </button>
             </div>
           </div>
 
           {/* Quantity Selector and Add to Cart */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-6 md:mb-8">
             <div className="flex items-center border-2 border-gray-300 rounded-lg">
               <button
                 onClick={handleQuantityDecrease}
-                className="px-4 py-3 text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={quantity <= 1}
               >
                 −
               </button>
-              <span className="px-6 py-3 text-lg font-medium border-x border-gray-300">
+              <span className="px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium border-x border-gray-300">
                 {quantity}
               </span>
               <button
                 onClick={handleQuantityIncrease}
-                className="px-4 py-3 text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors"
+                className="px-3 md:px-4 py-2 md:py-3 text-lg md:text-xl font-bold text-gray-600 hover:bg-gray-100 transition-colors"
               >
                 +
               </button>
             </div>
             <button
               onClick={handleAddToCart}
-              className="flex-1 bg-green-600 text-white py-3 px-8 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+              className="w-full sm:flex-1 bg-green-600 text-white py-2 md:py-3 px-6 md:px-8 rounded-lg font-semibold hover:bg-green-700 transition-colors text-sm md:text-base"
             >
               {cartItems[productId] ? "Update Cart" : "Add to Cart"}
             </button>
@@ -229,7 +231,7 @@ const Product = () => {
             {cartItems[productId] && (
               <button
                 onClick={handleRemoveFromCart}
-                className="bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors"
+                className="w-full sm:w-auto bg-red-600 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors text-sm md:text-base"
               >
                 Remove
               </button>
@@ -237,23 +239,27 @@ const Product = () => {
           </div>
 
           {/* Description */}
-          <div className="text-gray-700 leading-relaxed mb-5">
-            <p>{product.description}</p>
+          <div className="text-gray-700 leading-relaxed mb-4 md:mb-5">
+            <p className="text-sm md:text-base">{product.description}</p>
           </div>
 
           {/* Product Highlights */}
-          <div>
-            <div className="flex  gap-2 items-center mb-3 ">
-              <img src="../public/Product/jzoZqS0I 1.png" alt="" />
-              <h1 className="text-xl font-bold text-gray-800 ">
+          <div className="mb-6 md:mb-8">
+            <div className="flex gap-2 items-center mb-3">
+              <img
+                src="../public/Product/jzoZqS0I 1.png"
+                alt=""
+                className="w-5 h-5 md:w-6 md:h-6"
+              />
+              <h1 className="text-lg md:text-xl font-bold text-gray-800">
                 Product Highlights
               </h1>
             </div>
-            <div className="flex gap-3">
+            <div className="grid grid-cols-2 md:flex gap-2 md:gap-3">
               {product.highlights.map((item, index) => {
                 return (
                   <div
-                    className="bg-[#fdead2] rounded-lg text-[12px] px-2 pt-[120px] pb-3 w-[120px]"
+                    className="bg-[#fdead2] rounded-lg text-[10px] md:text-[12px] px-2 pt-16 md:pt-[120px] pb-2 md:pb-3 w-full md:w-[120px] text-center"
                     key={index}
                   >
                     {item}
@@ -264,28 +270,32 @@ const Product = () => {
           </div>
 
           {/* Key Ingredients */}
-          <div className="mt-8">
-            <div className="flex justify-between items-center mb-6">
-              <div className="flex gap-3 items-center">
-                <div className="w-12 h-12 bg-gradient-to-br  rounded-full flex items-center justify-center ">
-                  <img src="/Product/jzoZqS0I 1.png" alt="Ingredients Icon" />
+          <div className="mt-6 md:mt-8">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 md:mb-6 gap-3">
+              <div className="flex gap-2 md:gap-3 items-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br rounded-full flex items-center justify-center">
+                  <img
+                    src="/Product/jzoZqS0I 1.png"
+                    alt="Ingredients Icon"
+                    className="w-4 h-4 md:w-6 md:h-6"
+                  />
                 </div>
-                <h2 className="text-xl font-bold text-gray-800">
+                <h2 className="text-lg md:text-xl font-bold text-gray-800">
                   Key Ingredients
                 </h2>
               </div>
-              <button className="text-green-600 font-medium hover:text-green-700 transition-colors">
+              <button className="text-green-600 font-medium hover:text-green-700 transition-colors text-sm md:text-base self-start sm:self-auto">
                 View All Ingredients
               </button>
             </div>
 
             {/* 2x2 Grid of ingredients */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {product.ingredients.map((ingredient, index) => (
                 <Link to={`/ingredient/${ingredient.name}`} key={index}>
-                  <div className="bg-[#FDEAD2] rounded-lg px-2 py-4 flex items-center gap-5 hover:shadow-md transition-shadow cursor-pointer group border border-orange-100">
+                  <div className="bg-[#FDEAD2] rounded-lg px-2 py-3 md:py-4 flex items-center gap-3 md:gap-5 hover:shadow-md transition-shadow cursor-pointer group border border-orange-100">
                     {/* Ingredient Image */}
-                    <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0 bg-white shadow-sm">
+                    <div className="w-10 h-10 md:w-14 md:h-14 rounded-full overflow-hidden flex-shrink-0 bg-white shadow-sm">
                       <img
                         src={ingredient.image}
                         alt={ingredient.name}
@@ -295,10 +305,10 @@ const Product = () => {
 
                     {/* Ingredient Info */}
                     <div className="flex-1">
-                      <h3 className="text-base font-semibold text-gray-800">
+                      <h3 className="text-sm md:text-base font-semibold text-gray-800">
                         {ingredient.name}
                       </h3>
-                      <p className="text-gray-600 text-[10px] leading-snug">
+                      <p className="text-gray-600 text-[9px] md:text-[10px] leading-snug">
                         {ingredient.description}
                       </p>
                     </div>
@@ -306,8 +316,9 @@ const Product = () => {
                     {/* Arrow Icon */}
                     <div className="text-gray-400 group-hover:text-gray-600 transition-colors">
                       <svg
-                        width="18"
-                        height="18"
+                        width="14"
+                        height="14"
+                        className="md:w-[18px] md:h-[18px]"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -328,37 +339,43 @@ const Product = () => {
           </div>
 
           {/* How To Use */}
-          <div className="mt-8">
-            <h1 className="text-lg font-bold mb-4">How To Use</h1>
-            <p className="bg-[#FDEAD2] px-2 py-3 rounded-lg text-[15px]">
+          <div className="mt-6 md:mt-8">
+            <h1 className="text-base md:text-lg font-bold mb-3 md:mb-4">
+              How To Use
+            </h1>
+            <p className="bg-[#FDEAD2] px-3 md:px-2 py-3 rounded-lg text-sm md:text-[15px]">
               {product.how_to_use}
             </p>
           </div>
 
           {/* General Instructions */}
-          <div className="mt-8">
-            <h1 className="text-lg font-bold mb-4">General Instructions</h1>
-            <p className="bg-[#FDEAD2] px-2 py-3 rounded-lg text-[15px]">
+          <div className="mt-6 md:mt-8">
+            <h1 className="text-base md:text-lg font-bold mb-3 md:mb-4">
+              General Instructions
+            </h1>
+            <p className="bg-[#FDEAD2] px-3 md:px-2 py-3 rounded-lg text-sm md:text-[15px]">
               {product.instructions}
             </p>
           </div>
 
           {/* FAQ Section */}
-          <div className="mt-8">
-            <h1 className="text-lg font-bold mb-4">Commonly asked Questions</h1>
-            <div className="space-y-3">
+          <div className="mt-6 md:mt-8">
+            <h1 className="text-base md:text-lg font-bold mb-3 md:mb-4">
+              Commonly asked Questions
+            </h1>
+            <div className="space-y-2 md:space-y-3">
               {product.questions?.map((faq, index) => (
                 <div
                   key={index}
                   className="bg-[#FDEAD2] rounded-lg overflow-hidden"
                 >
-                  <div className="px-4 py-3 border-b border-orange-200">
-                    <h3 className="text-[15px] font-semibold text-gray-800">
+                  <div className="px-3 md:px-4 py-2 md:py-3 border-b border-orange-200">
+                    <h3 className="text-sm md:text-[15px] font-semibold text-gray-800">
                       Q{index + 1}: {faq.question}
                     </h3>
                   </div>
-                  <div className="px-4 py-3">
-                    <p className="text-[14px] text-gray-700 leading-relaxed">
+                  <div className="px-3 md:px-4 py-2 md:py-3">
+                    <p className="text-xs md:text-[14px] text-gray-700 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -368,8 +385,10 @@ const Product = () => {
           </div>
 
           {/* Video Section */}
-          <div className="mt-4">
-            <h1 className="my-3">Trust The Voice</h1>
+          <div className="mt-4 md:mt-6">
+            <h1 className="my-2 md:my-3 text-base md:text-lg font-bold">
+              Trust The Voice
+            </h1>
             <div className="w-full max-w-3xl aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
                 className="w-full h-full"
@@ -386,54 +405,57 @@ const Product = () => {
       </div>
 
       {/* 2ND BLOCK */}
-      <div className="w-full 2nd_block bg-[#FFF7E2] py-16 px-20">
+      <div className="w-full 2nd_block bg-[#FFF7E2] py-8 md:py-16 px-4 md:px-20">
         {/* Reviews and Ratings Section */}
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-12">
+          <h1 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8 md:mb-12">
             Reviews and Ratings
           </h1>
 
           {/* Rating Summary and Buttons */}
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6 md:mb-8 gap-4">
             {/* Rating Box */}
-            <div className="bg-[#FDEAD2] rounded-lg p-6 flex-shrink-0">
+            <div className="bg-[#FDEAD2] rounded-lg p-4 md:p-6 flex-shrink-0">
               <div className="flex items-end gap-2 mb-2">
-                <h2 className="text-4xl font-bold text-gray-800">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
                   {product.ratings}.0
                 </h2>
                 <div className="flex mb-1">
                   {Array.from({ length: product.ratings }).map((_, index) => (
-                    <span key={index} className="text-yellow-400 text-xl">
+                    <span
+                      key={index}
+                      className="text-yellow-400 text-lg md:text-xl"
+                    >
                       ★
                     </span>
                   ))}
                 </div>
               </div>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-xs md:text-sm">
                 Based on {product.reviews.length} reviews
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4">
-              <button className="px-6 py-3 border-2 text-green-700 border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+              <button className="px-4 md:px-6 py-2 md:py-3 border-2 text-green-700 border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors text-sm md:text-base">
                 See More Reviews
               </button>
-              <button className="px-6 py-3 border-2 border-gray-300 text-green-700 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+              <button className="px-4 md:px-6 py-2 md:py-3 border-2 border-gray-300 text-green-700 rounded-lg font-medium hover:bg-gray-50 transition-colors text-sm md:text-base">
                 Write a review
               </button>
             </div>
           </div>
 
           {/* Individual Reviews */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {product.reviews.map((review, index) => (
-              <div key={index} className="bg-[#FDEAD2] rounded-lg p-6">
-                <div className="flex items-start gap-4">
+              <div key={index} className="bg-[#FDEAD2] rounded-lg p-4 md:p-6">
+                <div className="flex items-start gap-3 md:gap-4">
                   {/* User Avatar */}
-                  <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-gray-600 font-semibold text-lg">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-gray-600 font-semibold text-sm md:text-lg">
                       {review.name
                         .split(" ")
                         .map((n) => n[0])
@@ -444,24 +466,26 @@ const Product = () => {
 
                   {/* Review Content */}
                   <div className="flex-1">
-                    <p className="text-gray-800 text-base leading-relaxed mb-3">
+                    <p className="text-gray-800 text-sm md:text-base leading-relaxed mb-2 md:mb-3">
                       {review.comment}
                     </p>
 
                     {/* Review Details */}
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs md:text-sm text-gray-600">
                       <span className="font-medium">{review.name}</span>
-                      <span>•</span>
-                      <span>20 January 2023</span>
-                      <span>•</span>
-                      <div className="flex">
-                        {Array.from({ length: review.rating }).map(
-                          (_, starIndex) => (
-                            <span key={starIndex} className="text-yellow-400">
-                              ★
-                            </span>
-                          )
-                        )}
+                      <div className="flex items-center gap-2 sm:gap-4">
+                        <span className="hidden sm:inline">•</span>
+                        <span>20 January 2023</span>
+                        <span>•</span>
+                        <div className="flex">
+                          {Array.from({ length: review.rating }).map(
+                            (_, starIndex) => (
+                              <span key={starIndex} className="text-yellow-400">
+                                ★
+                              </span>
+                            )
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
