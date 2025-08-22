@@ -3,7 +3,7 @@
       {
         "name": "Shatavari",
         "description": "Shatavari (Asparagus racemosus) is a rejuvenating herb widely used in Ayurveda, particularly for women’s health.",
-        "image":"/public/Ingredients/shatavari.jpg",
+        "image":"/Ingredients/shatavari.jpg",
         "benefits": [
           "Balances female hormones",
           "Supports reproductive health",
@@ -48,7 +48,7 @@
       {
         "name": "Gokhru",
         "description": "Gokhru (Tribulus terrestris) is an important herb for kidney health and male vitality.",
-        "image":"/public/Ingredients/gokhru.jpg",
+        "image":"/Ingredients/gokhru.jpg",
         "benefits": [
           "Enhances stamina and energy",
           "Supports kidney and urinary tract health",
@@ -93,7 +93,7 @@
       {
         "name": "Shikakai",
         "description": "Shikakai (Acacia concinna) is a natural cleanser and hair care herb traditionally used as herbal shampoo.",
-        "image":"/public/Ingredients/shikhakai.jpg",
+        "image":"/Ingredients/shikhakai.jpg",
         "benefits": [
           "Promotes hair growth",
           "Strengthens scalp",
@@ -137,7 +137,7 @@
       {
         "name": "Ritha",
         "description": "Ritha (Sapindus mukorossi), also known as Soapnut, is rich in natural saponins and used as a cleanser.",
-        "image":"/public/Ingredients/ritha.jpg",
+        "image":"/Ingredients/ritha.jpg",
         "benefits": [
           "Natural hair and skin cleanser",
           "Antimicrobial and antifungal",
@@ -182,7 +182,7 @@
       {
         "name": "Citrak",
         "description": "Citrak (Plumbago zeylanica) is a powerful digestive and carminative herb used in Ayurveda to kindle Agni (digestive fire).",
-        "image":"/public/Ingredients/citrak.jpg",
+        "image":"/Ingredients/citrak.jpg",
         "benefits": [
           "Improves digestion",
           "Reduces ama (toxins)",
