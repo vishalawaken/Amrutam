@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Search_Bar = () => {
   return (
-    <div className='w-full bg-[url("../public/Search_Bar/search_bar_bg.png")] justify-center items-center border-box hidden md:flex md:flex-col'>
+    <div className='w-full bg-[url("/Search_Bar/search_bar_bg.png")] justify-center items-center border-box hidden md:flex md:flex-col'>
       <h1 className="text-black font-bold mb-8 mt-3 text-2xl">Store</h1>
       <div className="flex gap-3 mb-5">
         <div className="flex gap-2 bg-white rounded-lg items-center">
@@ -18,7 +18,7 @@ const Search_Bar = () => {
           />
         </div>
         <span className="">
-          <img src="../public/Search_Bar/search_icon.png" alt="" />
+          <img src="/Search_Bar/search_icon.png" alt="" />
         </span>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/All_.png"
+                    src="/categories_icons/All_.png"
                     alt=""
                     className="w-8 h-8 object-contain"
                   />
@@ -31,7 +31,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/Hair.svg"
+                    src="/categories_icons/Hair.svg"
                     alt=""
                     className="w-8 h-8 object-contain"
                   />
@@ -48,7 +48,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/skin.png"
+                    src="/categories_icons/skin.png"
                     alt=""
                     className="w-8 h-8 object-contain"
                   />
@@ -65,7 +65,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/digestion.png"
+                    src="/categories_icons/digestion.png"
                     alt=""
                     className="w-8 h-8 object-contain"
                   />
@@ -82,7 +82,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/joints.png"
+                    src="/categories_icons/joints.png"
                     alt=""
                     className="w-8 h-8 object-contain"
                   />
@@ -99,7 +99,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/immunity.png"
+                    src="/categories_icons/immunity.png"
                     alt=""
                     className="w-8 h-8 object-contain"
                   />
@@ -116,7 +116,7 @@ const Categories = () => {
               <div className="bg-[#e0e8e2] p-4 rounded-full mb-2 flex items-center justify-center w-16 h-16 border-4 border-white group-hover:border-transparent transition-all duration-300">
                 <span>
                   <img
-                    src="../public/categories_icons/arrow.png"
+                    src="/categories_icons/arrow.png"
                     alt=""
                     className="w-5 h-5 object-contain"
                   />

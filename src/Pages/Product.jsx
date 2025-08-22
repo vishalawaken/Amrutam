@@ -247,7 +247,7 @@ const Product = () => {
           <div className="mb-6 md:mb-8">
             <div className="flex gap-2 items-center mb-3">
               <img
-                src="../public/Product/jzoZqS0I 1.png"
+                src="/Product/jzoZqS0I 1.png"
                 alt=""
                 className="w-5 h-5 md:w-6 md:h-6"
               />

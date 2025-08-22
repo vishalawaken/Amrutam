@@ -94,7 +94,7 @@ const Ingredients = () => {
               <div className="flex flex-row gap-4 md:gap-6 justify-between items-center">
                 <div className="text-center">
                   <img
-                    src="../public/Ingredients/vata_balanced.png"
+                    src="/Ingredients/vata_balanced.png"
                     alt="Vata Balanced"
                     className="w-20 h-20 md:w-40 md:h-45 mx-auto mb-2"
                   />
@@ -104,7 +104,7 @@ const Ingredients = () => {
                 </div>
                 <div className="text-center">
                   <img
-                    src="../public/Ingredients/kapha_balanced.png"
+                    src="/Ingredients/kapha_balanced.png"
                     alt="Kapha Balanced"
                     className="w-20 h-20 md:w-40 md:h-45 mx-auto mb-2"
                   />
@@ -114,7 +114,7 @@ const Ingredients = () => {
                 </div>
                 <div className="text-center">
                   <img
-                    src="../public/Ingredients/pitta_unbalanced.png"
+                    src="/Ingredients/pitta_unbalanced.png"
                     alt="Pitta Unbalanced"
                     className="w-20 h-20 md:w-40 md:h-45 mx-auto mb-2"
                   />
@@ -133,7 +133,7 @@ const Ingredients = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/relax.png"
+                    src="/Benefits/relax.png"
                     alt="Nervous System"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -143,7 +143,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/balance.png"
+                    src="/Benefits/balance.png"
                     alt="Weight Loss"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -153,7 +153,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/blood.png"
+                    src="/Benefits/blood.png"
                     alt="Blood Sugar"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -163,7 +163,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/medicine.png"
+                    src="/Benefits/medicine.png"
                     alt="Hemorrhoids"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -173,7 +173,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/digestion_new.png"
+                    src="/Benefits/digestion_new.png"
                     alt="Digestion"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -183,7 +183,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/Heart.png"
+                    src="/Benefits/Heart.png"
                     alt="Heart Health"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -193,7 +193,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/plant.png"
+                    src="/Benefits/plant.png"
                     alt="Skin Health"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -203,7 +203,7 @@ const Ingredients = () => {
                 </div>
                 <div className="bg-[#f5e6d3] p-3 md:p-4 rounded-lg">
                   <img
-                    src="../public/Benefits/digestion_new.png"
+                    src="/Benefits/digestion_new.png"
                     alt="Wound Healing"
                     className="w-6 h-6 md:w-8 md:h-8 mb-2 md:mb-3"
                   />
@@ -222,7 +222,7 @@ const Ingredients = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 <div className="text-center">
                   <img
-                    src="../public/Ayurvedic_Properties/rasa.png"
+                    src="/Ayurvedic_Properties/rasa.png"
                     alt="Rasa"
                     className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                   />
@@ -243,7 +243,7 @@ const Ingredients = () => {
                 </div>
                 <div className="text-center">
                   <img
-                    src="../public/Ayurvedic_Properties/Veerya.png"
+                    src="/Ayurvedic_Properties/Veerya.png"
                     alt="Virya"
                     className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                   />
@@ -264,7 +264,7 @@ const Ingredients = () => {
                 </div>
                 <div className="text-center">
                   <img
-                    src="../public/Ayurvedic_Properties/Guna.png"
+                    src="/Ayurvedic_Properties/Guna.png"
                     alt="Guna"
                     className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                   />
@@ -285,7 +285,7 @@ const Ingredients = () => {
                 </div>
                 <div className="text-center">
                   <img
-                    src="../public/Ayurvedic_Properties/Vipaka.png"
+                    src="/Ayurvedic_Properties/Vipaka.png"
                     alt="Vipaka"
                     className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                   />
@@ -317,14 +317,14 @@ const Ingredients = () => {
                   (formulation, index) => (
                     <div key={index} className="text-center">
                       <img
-                        src={`../public/Important_formulations/${formulation
+                        src={`/Important_formulations/${formulation
                           .toLowerCase()
                           .replace(/\s+/g, "_")}.png`}
                         alt={formulation}
                         className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                         onError={(e) => {
                           e.target.src =
-                            "../public/Important_formulations/chitrak_haritaki.png"; // Fallback image
+                            "/Important_formulations/chitrak_haritaki.png"; // Fallback image
                         }}
                       />
                       <p className="text-xs md:text-sm font-medium text-gray-700">
@@ -345,14 +345,13 @@ const Ingredients = () => {
                 {currentIngredient.therapeutic_uses.map((use, index) => (
                   <div key={index} className="text-center">
                     <img
-                      src={`../public/Therapeutic_uses/${use
+                      src={`/Therapeutic_uses/${use
                         .toLowerCase()
                         .replace(/\s+/g, "_")}.png`}
                       alt={use}
                       className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                       onError={(e) => {
-                        e.target.src =
-                          "../public/Therapeutic_uses/agnimandya.png"; // Fallback image
+                        e.target.src = "/Therapeutic_uses/agnimandya.png"; // Fallback image
                       }}
                     />
                     <p className="text-xs md:text-sm font-medium text-gray-700">
@@ -376,13 +375,13 @@ const Ingredients = () => {
                       className="text-center bg-[#f5e6d3] p-3 md:p-4 rounded-lg"
                     >
                       <img
-                        src={`../public/Plant_parts/${part
+                        src={`/Plant_parts/${part
                           .toLowerCase()
                           .replace(/\s+/g, "_")}.png`}
                         alt={part}
                         className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-2"
                         onError={(e) => {
-                          e.target.src = "../public/Plant_parts/root.png"; // Fallback image
+                          e.target.src = "/Plant_parts/root.png"; // Fallback image
                         }}
                       />
                       <p className="text-xs md:text-sm font-bold text-gray-700 mb-1">
@@ -412,7 +411,7 @@ const Ingredients = () => {
               </h3>
               <div className="flex items-start gap-2 md:gap-3">
                 <img
-                  src="../public/icons/location.png"
+                  src="/icons/location.png"
                   alt="Location"
                   className="w-3 h-4 mt-1 flex-shrink-0"
                 />
