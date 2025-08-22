@@ -2,7 +2,7 @@ import React from "react";
 
 const Play_Store = () => {
   return (
-    <div className="w-full flex bg-[#FFF7E2] px-15 pt-20 pb-20 hidden md:flex">
+    <div className="w-full bg-[#FFF7E2] px-15 pt-20 pb-20 hidden md:flex">
       <div className="left_section w-[50%]">
         <h1 className="text-[#3B6A46] text-3xl mb-6">
           Download Amrutam Ayurveda App Now
